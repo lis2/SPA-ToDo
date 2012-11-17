@@ -4,13 +4,13 @@ class ToDo.Collections.Entries extends Backbone.Collection
   url: '/entries'
 
   initialize: () ->
-    @on('remove', this.hideModel, this)
+    @on('remove', @hideModel, this)
 
   hideModel: (model) ->
     model.trigger('hide')
 
   show: (id) ->
-    modelsToRemove = this.filter( (entry) ->
+    modelsToRemove = @filter( (entry) ->
       return entry.id.toString() != id
     );
-    this.remove(modelsToRemove)
+    @remove(modelsToRemove)
