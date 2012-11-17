@@ -1,0 +1,7 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#new_entry_name { float: left; margin-right: 10px; width: 775px; }
+#entries td:nth-child(2) { width: 700px; }
+input.error { border: 1px solid red; }

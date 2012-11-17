@@ -1,0 +1,11 @@
+<td>
+  <input type="checkbox"
+  <% if @entry.get('status') == "complete": %>
+    checked=checked
+  <% end %>/>
+</td>
+<td class="<%= @entry.get('status') %>"><%= @entry.get('name') %></td>
+<td>
+  <a href="/#entries/<%= @entry.get('id') %>" class="btn btn-mini">Show</a>
+  <a href="/#entries/<%= @entry.get('id') %>" class="btn btn-mini btn-danger delete">Destroy</a>
+</td>

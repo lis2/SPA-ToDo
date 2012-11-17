@@ -1,0 +1,5 @@
+<form id="new_entry">
+  <input type="text" name="name" id="new_entry_name" />
+  <input type="submit" value="Add" class="btn btn-primary" />
+</form>
+
