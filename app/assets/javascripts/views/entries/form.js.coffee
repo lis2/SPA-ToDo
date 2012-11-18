@@ -13,8 +13,10 @@ class ToDo.Views.Form extends Backbone.View
 
   createEntry: (event) ->
     event.preventDefault()
-    attributes = name: $('#new_entry_name').val()
-
+    attributes = 
+      entry:
+        name: $('#new_entry_name').val()
+        status: "incomplete"
     @collection.create attributes,
       wait: true
       success: ->

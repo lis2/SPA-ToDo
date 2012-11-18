@@ -19,7 +19,7 @@ class EntriesController < ApplicationController
   end
 
   def create
-    @entry = Entry.new(name: params[:name])
+    @entry = Entry.create(params[:entry])
     @entry.save
 
     respond_with @entry

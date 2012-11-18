@@ -1,12 +1,6 @@
 class Entry < ActiveRecord::Base
-   attr_accessible :name
+   attr_accessible :name, :status
 
    validates_presence_of :name
-
-   after_create :set_status
-
-   def set_status
-     self.status = "incomplete"
-     self.save
-   end
+   validates_presence_of :status
 end

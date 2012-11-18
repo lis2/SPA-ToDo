@@ -10,9 +10,13 @@ class ToDo.Views.Entry extends Backbone.View
   initialize: () ->
     @model.on('change', @render, this)
     @model.on('destroy hide', @remove, this)
+    @model.on('show', @show, this)
 
   remove: () ->
     $(@el).fadeOut()
+
+  show: () ->
+    $(@el).fadeIn()
 
   render: ->
     $(@el).html(@template(entry: @model))

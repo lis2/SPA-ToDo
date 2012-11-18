@@ -9,8 +9,11 @@ class ToDo.Collections.Entries extends Backbone.Collection
   hideModel: (model) ->
     model.trigger('hide')
 
+  showModel: (model) ->
+    model.trigger('show')
+
   show: (id) ->
-    modelsToRemove = @filter( (entry) ->
-      return entry.id.toString() != id
-    );
-    @remove(modelsToRemove)
+    @each(@hideModel)
+
+    model = @get(id)
+    @showModel(model)
